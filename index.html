@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="SQL, SSIS, data warehousing, and applied AI projects by Mitali Sakle.">
+    <meta name="theme-color" content="#07152f">
+    <title>Mitali Sakle | Data Engineering Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main>
+      <a class="skip-link" href="#main-content">Skip to content</a>
+
+      <header class="site-header">
+        <a class="brand" href="#top" aria-label="Mitali Sakle, home">
+          <span class="brand-mark">MS</span><span>Mitali Sakle</span>
+        </a>
+        <nav aria-label="Primary navigation">
+          <a href="#projects">Projects</a>
+          <a href="#presentations">Presentations</a>
+          <a href="#resume">Résumé</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </header>
+
+      <section class="hero" id="top" aria-labelledby="hero-title">
+        <div class="ambient ambient-one"></div>
+        <div class="ambient ambient-two"></div>
+        <div class="hero-grid" id="main-content">
+          <div class="hero-copy">
+            <p class="eyebrow">Data engineer · MS-MIS @ Texas A&amp;M</p>
+            <h1 id="hero-title">I turn complex data into <span>trusted systems.</span></h1>
+            <p class="hero-intro">SQL, SSIS, data warehousing, and agentic AI—built for clarity, reliability, and business impact.</p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#projects">Explore projects <span aria-hidden="true">→</span></a>
+              <a class="button button-secondary" href="#resume">View résumé <span aria-hidden="true">↓</span></a>
+            </div>
+            <div class="proof" aria-label="Portfolio highlights">
+              <span class="proof-icon" aria-hidden="true">▦</span>
+              <span><strong>19M+</strong> rows engineered</span><span class="dot">·</span>
+              <span><strong>Production</strong> fact models</span>
+            </div>
+          </div>
+          <div class="hero-visual" aria-label="Data flows from source systems through SQL into analytics, warehousing, and AI">
+            <div class="visual-orbit"></div>
+            <img src="hero-pipeline.png" alt="Abstract glowing data pipeline connecting sources to a warehouse, analytics, and AI">
+          </div>
+        </div>
+      </section>
+
+      <section class="section projects-section" id="projects" aria-labelledby="projects-title">
+        <div class="section-heading">
+          <div><p class="eyebrow">Selected work</p><h2 id="projects-title">Engineering that earns trust.</h2></div>
+          <p>My projects focus on the unglamorous details that make data useful: correct grain, repeatable loads, traceability, and clear validation.</p>
+        </div>
+        <div class="project-grid">
+          <article class="project-card cyan">
+            <div class="project-topline"><span>01</span><span class="status-dot"></span></div>
+            <h3>Enterprise market data pipeline</h3>
+            <p>Designed a reliable SQL and SSIS pipeline for more than 19 million market-data rows, with version-aware deduplication, reporting partitions, repeatable MERGE loads, and end-to-end validation.</p>
+            <div class="project-outcome">19M+ rows · zero duplicate business keys</div>
+            <ul class="tag-list" aria-label="Technologies"><li>SQL Server</li><li>SSIS</li><li>MERGE</li><li>Data Quality</li></ul>
+          </article>
+          <article class="project-card violet">
+            <div class="project-topline"><span>02</span><span class="status-dot"></span></div>
+            <h3>Production registration fact</h3>
+            <p>Modeled Salesforce registration data at the asset and serial-number grain, reconciled legacy and migration dates, resolved dealer roles, and delivered a production-ready fact table.</p>
+            <div class="project-outcome">Production deployed · auditable date logic</div>
+            <ul class="tag-list" aria-label="Technologies"><li>Salesforce</li><li>Dimensional Modeling</li><li>SCD</li><li>SQL</li></ul>
+          </article>
+          <article class="project-card apricot">
+            <div class="project-topline"><span>03</span><span class="status-dot"></span></div>
+            <h3>Multi-source shipment warehouse</h3>
+            <p>Unified warehouse, delivery, order, and regional history feeds into reusable staging, snapshot, resolved-view, and fact-loading patterns while preserving source traceability.</p>
+            <div class="project-outcome">4.6M+ shipment rows profiled</div>
+            <ul class="tag-list" aria-label="Technologies"><li>ETL</li><li>SSIS</li><li>Warehousing</li><li>Validation</li></ul>
+          </article>
+          <article class="project-card blue">
+            <div class="project-topline"><span>04</span><span class="status-dot"></span></div>
+            <h3>Dealer support AI agent</h3>
+            <p>An in-progress agentic AI prototype for answering dealer questions from governed documentation and SQL-backed knowledge views, with grounded responses and clear escalation paths.</p>
+            <div class="project-outcome">Currently building · responsible AI focus</div>
+            <ul class="tag-list" aria-label="Technologies"><li>Agentic AI</li><li>MCP</li><li>RAG</li><li>SQL</li></ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section capability-section" aria-labelledby="capabilities-title">
+        <div class="capability-intro">
+          <p class="eyebrow">How I work</p>
+          <h2 id="capabilities-title">From source system to confident decision.</h2>
+          <p>I combine hands-on engineering with business context, so technical decisions remain understandable to the people who rely on the data.</p>
+        </div>
+        <dl class="capability-list">
+          <div><dt><span>01</span>SQL &amp; modeling</dt><dd>T-SQL, data profiling, dimensional models, MERGE patterns</dd></div>
+          <div><dt><span>02</span>Pipelines</dt><dd>SSIS, source-to-stage ingestion, orchestration, validation</dd></div>
+          <div><dt><span>03</span>Warehousing</dt><dd>Snapshots, resolved views, fact tables, data quality</dd></div>
+          <div><dt><span>04</span>Applied AI</dt><dd>Agent workflows, MCP research, grounded knowledge systems</dd></div>
+        </dl>
+      </section>
+
+      <section class="section presentations-section" id="presentations" aria-labelledby="presentations-title">
+        <div class="section-heading compact">
+          <div><p class="eyebrow">Presentations</p><h2 id="presentations-title">Technical stories, clearly told.</h2></div>
+          <p>Designed for technical teams, managers, and audiences new to data engineering.</p>
+        </div>
+        <div class="presentation-grid">
+          <article class="presentation-card">
+            <div class="slide-preview" aria-hidden="true"><span>CASE STUDY</span><div class="mini-diagram diagram-1"><i></i><i></i><i></i><i></i></div><strong>01</strong></div>
+            <div class="presentation-copy"><p>CASE STUDY</p><h3>Building reusable data-warehouse patterns</h3><span>A clear, business-friendly walkthrough of the architecture, engineering decisions, validation strategy, and impact of my data-engineering internship work.</span><small>Internship midterm review · 2026</small></div>
+          </article>
+          <article class="presentation-card">
+            <div class="slide-preview" aria-hidden="true"><span>TECHNICAL TALK</span><div class="mini-diagram diagram-2"><i></i><i></i><i></i><i></i></div><strong>02</strong></div>
+            <div class="presentation-copy"><p>TECHNICAL TALK</p><h3>From raw files to trusted facts</h3><span>A visual explanation of how staged data moves through snapshots and resolution logic into reliable analytical facts—without burying the audience in jargon.</span><small>Presentation concept · customizable</small></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section resume-section" id="resume" aria-labelledby="resume-title">
+        <div class="resume-panel">
+          <div>
+            <p class="eyebrow">Résumé snapshot</p>
+            <h2 id="resume-title">Data engineer with a builder's mindset.</h2>
+            <p class="resume-summary">MS-MIS candidate at Texas A&amp;M with experience in SQL Server, SSIS, data warehousing, Salesforce data, validation, and applied AI. I enjoy turning ambiguous data problems into systems teams can trust.</p>
+            <div class="resume-actions">
+              <a class="button button-primary" href="Mitali-Sakle-Resume.txt" download>Download résumé snapshot <span aria-hidden="true">↓</span></a>
+              <span>Replace this prototype file with your final PDF anytime.</span>
+            </div>
+          </div>
+          <div class="resume-facts">
+            <div><span>EDUCATION</span><strong>MS in Management Information Systems</strong><small>Texas A&amp;M University · Expected 2027</small></div>
+            <div><span>FOCUS</span><strong>Data Engineering &amp; Analytics</strong><small>SQL · SSIS · Data Warehousing · AI</small></div>
+            <div><span>STRENGTH</span><strong>Reliable, explainable systems</strong><small>From technical grain to business impact</small></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact-section" id="contact" aria-labelledby="contact-title">
+        <div class="contact-glow"></div>
+        <p class="eyebrow">Let's connect</p>
+        <h2 id="contact-title">Have a data problem worth untangling?</h2>
+        <p>I'm open to data-engineering, analytics, and applied-AI opportunities where thoughtful systems can create real business value.</p>
+        <div class="contact-links">
+          <a class="button button-primary" href="mailto:mitali.sakle@tamu.edu">Email me</a>
+          <a class="button button-secondary" href="https://github.com/mitalisakle20" target="_blank" rel="noreferrer">GitHub</a>
+        </div>
+      </section>
+
+      <footer>
+        <a class="brand" href="#top"><span class="brand-mark">MS</span><span>Mitali Sakle</span></a>
+        <p>Designed around reliable data, clear thinking, and steady curiosity.</p>
+        <a href="#top">Back to top ↑</a>
+      </footer>
+    </main>
+  </body>
+</html>

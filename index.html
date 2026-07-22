@@ -3,16 +3,30 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="SQL, SSIS, data warehousing, and applied AI projects by Mitali Sakle.">
+    <meta name="description" content="Data engineering and applied-AI portfolio by Mitali Sakle: SQL, SSIS, data warehousing, and a warranty service agent built during her Summer 2026 internship.">
     <meta name="theme-color" content="#07152f">
-    <title>Mitali Sakle | Data Engineering Portfolio</title>
-    <link rel="stylesheet" href="styles.css?v=3">
+    <meta name="author" content="Mitali Sakle">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Mitali Sakle — Data Engineering &amp; Applied AI">
+    <meta property="og:description" content="SQL, SSIS, data warehousing, and a warranty service agent built during a Summer 2026 internship.">
+    <meta property="og:url" content="https://mitalisakle20.github.io/portfolio/">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%23ffb38a'/><text x='16' y='23' font-family='monospace' font-size='15' font-weight='700' text-anchor='middle' fill='%2307152f'>MS</text></svg>">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <title>Mitali Sakle | Data Engineering &amp; Applied AI Portfolio</title>
+    <link rel="stylesheet" href="styles.css?v=4">
   </head>
   <body>
     <main>
       <a class="skip-link" href="#main-content">Skip to content</a>
 
-      <header class="site-header">
+      <header class="site-header" id="site-header">
         <a class="brand" href="#top" aria-label="Mitali Sakle, home">
           <span class="brand-mark">MS</span><span>Mitali Sakle</span>
         </a>
@@ -29,9 +43,9 @@
         <div class="ambient ambient-two"></div>
         <div class="hero-grid" id="main-content">
           <div class="hero-copy">
-            <p class="eyebrow">Data engineer · MS-MIS @ Texas A&amp;M</p>
+            <p class="eyebrow">Data engineer · MS-MIS @ Texas A&amp;M · Summer Internship 2026</p>
             <h1 id="hero-title">I turn complex data into <span>trusted systems.</span></h1>
-            <p class="hero-intro">SQL, SSIS, data warehousing, and agentic AI—built for clarity, reliability, and business impact.</p>
+            <p class="hero-intro">SQL, SSIS, data warehousing, and AI service agents—built for clarity, reliability, and measurable business impact.</p>
             <div class="hero-actions">
               <a class="button button-primary" href="#projects">Explore projects <span aria-hidden="true">→</span></a>
               <a class="button button-secondary" href="#resume">View résumé <span aria-hidden="true">↓</span></a>
@@ -39,7 +53,8 @@
             <div class="proof" aria-label="Portfolio highlights">
               <span class="proof-icon" aria-hidden="true">▦</span>
               <span><strong>19M+</strong> rows engineered</span><span class="dot">·</span>
-              <span><strong>Production</strong> fact models</span>
+              <span><strong>Production</strong> fact models</span><span class="dot">·</span>
+              <span><strong>AI service agent</strong> in build</span>
             </div>
           </div>
           <div class="hero-visual" aria-label="Data flows from source systems through SQL into analytics, warehousing, and AI">
@@ -50,67 +65,94 @@
       </section>
 
       <section class="section projects-section" id="projects" aria-labelledby="projects-title">
-        <div class="section-heading">
+        <div class="section-heading reveal">
           <div><p class="eyebrow">Selected work</p><h2 id="projects-title">Engineering that earns trust.</h2></div>
-          <p>My projects focus on the unglamorous details that make data useful: correct grain, repeatable loads, traceability, and clear validation.</p>
+          <p>My work focuses on the unglamorous details that make data useful: correct grain, repeatable loads, traceability, and clear validation—now extended into a grounded AI agent.</p>
         </div>
-        <div class="project-grid">
-          <article class="project-card cyan">
-            <div class="project-topline"><span>01</span><span class="status-dot"></span></div>
-            <h3>Enterprise market data pipeline</h3>
-            <p>Designed a reliable SQL and SSIS pipeline for more than 19 million market-data rows, with version-aware deduplication, reporting partitions, repeatable MERGE loads, and end-to-end validation.</p>
-            <div class="project-outcome">19M+ rows · zero duplicate business keys</div>
-            <ul class="tag-list" aria-label="Technologies"><li>SQL Server</li><li>SSIS</li><li>MERGE</li><li>Data Quality</li></ul>
+
+        <div class="project-stack">
+          <article class="project-card featured reveal">
+            <div class="featured-body">
+              <div class="project-topline">
+                <span>Now · Summer Internship 2026</span>
+                <span class="live-badge"><span class="live-dot" aria-hidden="true"></span>In progress</span>
+              </div>
+              <h3>Warranty service agent</h3>
+              <p>An AI service agent that answers warranty questions in plain language—checking coverage, confirming eligibility, and surfacing claim status—by grounding every answer in governed policy documents and SQL-backed warranty data. It's built with clear guardrails so it hands off to a person the moment a case falls outside what it can verify.</p>
+              <div class="project-outcome">Building now · grounded, auditable answers</div>
+              <ul class="tag-list" aria-label="Technologies"><li>Agentic AI</li><li>RAG</li><li>MCP</li><li>SQL Server</li><li>Guardrails</li></ul>
+            </div>
+            <div class="featured-visual" aria-hidden="true">
+              <div class="agent-flow">
+                <span class="flow-node">Warranty question</span>
+                <span class="flow-arrow">↓</span>
+                <span class="flow-node">Policy docs + SQL warranty data</span>
+                <span class="flow-arrow">↓</span>
+                <span class="flow-node accent">Grounded, cited answer</span>
+                <span class="flow-arrow">↓</span>
+                <span class="flow-node muted">Human handoff when unsure</span>
+              </div>
+            </div>
           </article>
-          <article class="project-card violet">
-            <div class="project-topline"><span>02</span><span class="status-dot"></span></div>
-            <h3>Production registration fact</h3>
-            <p>Modeled Salesforce registration data at the asset and serial-number grain, reconciled legacy and migration dates, resolved dealer roles, and delivered a production-ready fact table.</p>
-            <div class="project-outcome">Production deployed · auditable date logic</div>
-            <ul class="tag-list" aria-label="Technologies"><li>Salesforce</li><li>Dimensional Modeling</li><li>SCD</li><li>SQL</li></ul>
-          </article>
-          <article class="project-card apricot">
-            <div class="project-topline"><span>03</span><span class="status-dot"></span></div>
-            <h3>Multi-source shipment warehouse</h3>
-            <p>Unified warehouse, delivery, order, and regional history feeds into reusable staging, snapshot, resolved-view, and fact-loading patterns while preserving source traceability.</p>
-            <div class="project-outcome">4.6M+ shipment rows profiled</div>
-            <ul class="tag-list" aria-label="Technologies"><li>ETL</li><li>SSIS</li><li>Warehousing</li><li>Validation</li></ul>
-          </article>
-          <article class="project-card blue">
-            <div class="project-topline"><span>04</span><span class="status-dot"></span></div>
-            <h3>Dealer support AI agent</h3>
-            <p>An in-progress agentic AI prototype for answering dealer questions from governed documentation and SQL-backed knowledge views, with grounded responses and clear escalation paths.</p>
-            <div class="project-outcome">Currently building · responsible AI focus</div>
-            <ul class="tag-list" aria-label="Technologies"><li>Agentic AI</li><li>MCP</li><li>RAG</li><li>SQL</li></ul>
-          </article>
+
+          <div class="project-grid">
+            <article class="project-card cyan reveal">
+              <div class="project-topline"><span>01</span><span class="status-dot"></span></div>
+              <h3>Enterprise market data pipeline</h3>
+              <p>Designed a reliable SQL and SSIS pipeline for more than 19 million market-data rows, with version-aware deduplication, reporting partitions, repeatable MERGE loads, and end-to-end validation.</p>
+              <div class="project-outcome">19M+ rows · zero duplicate business keys</div>
+              <ul class="tag-list" aria-label="Technologies"><li>SQL Server</li><li>SSIS</li><li>MERGE</li><li>Data Quality</li></ul>
+            </article>
+            <article class="project-card violet reveal">
+              <div class="project-topline"><span>02</span><span class="status-dot"></span></div>
+              <h3>Production registration fact</h3>
+              <p>Modeled Salesforce registration data at the asset and serial-number grain, reconciled legacy and migration dates, resolved dealer roles, and delivered a production-ready fact table.</p>
+              <div class="project-outcome">Production deployed · auditable date logic</div>
+              <ul class="tag-list" aria-label="Technologies"><li>Salesforce</li><li>Dimensional Modeling</li><li>SCD</li><li>SQL</li></ul>
+            </article>
+            <article class="project-card apricot reveal">
+              <div class="project-topline"><span>03</span><span class="status-dot"></span></div>
+              <h3>Multi-source shipment warehouse</h3>
+              <p>Unified warehouse, delivery, order, and regional history feeds into reusable staging, snapshot, resolved-view, and fact-loading patterns while preserving source traceability.</p>
+              <div class="project-outcome">4.6M+ shipment rows profiled</div>
+              <ul class="tag-list" aria-label="Technologies"><li>ETL</li><li>SSIS</li><li>Warehousing</li><li>Validation</li></ul>
+            </article>
+            <article class="project-card blue reveal">
+              <div class="project-topline"><span>04</span><span class="status-dot"></span></div>
+              <h3>Dealer support AI agent</h3>
+              <p>An earlier agentic prototype for answering dealer questions from governed documentation and SQL-backed knowledge views—the groundwork that shaped the warranty service agent above.</p>
+              <div class="project-outcome">Prototype · responsible AI foundation</div>
+              <ul class="tag-list" aria-label="Technologies"><li>Agentic AI</li><li>MCP</li><li>RAG</li><li>SQL</li></ul>
+            </article>
+          </div>
         </div>
       </section>
 
       <section class="section capability-section" aria-labelledby="capabilities-title">
-        <div class="capability-intro">
+        <div class="capability-intro reveal">
           <p class="eyebrow">How I work</p>
           <h2 id="capabilities-title">From source system to confident decision.</h2>
           <p>I combine hands-on engineering with business context, so technical decisions remain understandable to the people who rely on the data.</p>
         </div>
-        <dl class="capability-list">
+        <dl class="capability-list reveal">
           <div><dt><span>01</span>SQL &amp; modeling</dt><dd>T-SQL, data profiling, dimensional models, MERGE patterns</dd></div>
           <div><dt><span>02</span>Pipelines</dt><dd>SSIS, source-to-stage ingestion, orchestration, validation</dd></div>
           <div><dt><span>03</span>Warehousing</dt><dd>Snapshots, resolved views, fact tables, data quality</dd></div>
-          <div><dt><span>04</span>Applied AI</dt><dd>Agent workflows, MCP research, grounded knowledge systems</dd></div>
+          <div><dt><span>04</span>Applied AI</dt><dd>Grounded service agents, MCP, RAG, guardrails, escalation</dd></div>
         </dl>
       </section>
 
       <section class="section presentations-section" id="presentations" aria-labelledby="presentations-title">
-        <div class="section-heading compact">
+        <div class="section-heading compact reveal">
           <div><p class="eyebrow">Presentations</p><h2 id="presentations-title">Technical stories, clearly told.</h2></div>
           <p>Designed for technical teams, managers, and audiences new to data engineering.</p>
         </div>
         <div class="presentation-grid">
-          <article class="presentation-card">
+          <article class="presentation-card reveal">
             <div class="slide-preview" aria-hidden="true"><span>CASE STUDY</span><div class="mini-diagram diagram-1"><i></i><i></i><i></i><i></i></div><strong>01</strong></div>
             <div class="presentation-copy"><p>CASE STUDY</p><h3>Building reusable data-warehouse patterns</h3><span>A clear, business-friendly walkthrough of the architecture, engineering decisions, validation strategy, and impact of my data-engineering internship work.</span><small>Internship midterm review · 2026</small></div>
           </article>
-          <article class="presentation-card">
+          <article class="presentation-card reveal">
             <div class="slide-preview" aria-hidden="true"><span>TECHNICAL TALK</span><div class="mini-diagram diagram-2"><i></i><i></i><i></i><i></i></div><strong>02</strong></div>
             <div class="presentation-copy"><p>TECHNICAL TALK</p><h3>From raw files to trusted facts</h3><span>A visual explanation of how staged data moves through snapshots and resolution logic into reliable analytical facts—without burying the audience in jargon.</span><small>Presentation concept · customizable</small></div>
           </article>
@@ -118,11 +160,11 @@
       </section>
 
       <section class="section resume-section" id="resume" aria-labelledby="resume-title">
-        <div class="resume-panel">
+        <div class="resume-panel reveal">
           <div>
             <p class="eyebrow">Résumé snapshot</p>
             <h2 id="resume-title">Data engineer with a builder's mindset.</h2>
-            <p class="resume-summary">MS-MIS candidate at Texas A&amp;M with experience in SQL Server, SSIS, data warehousing, Salesforce data, validation, and applied AI. I enjoy turning ambiguous data problems into systems teams can trust.</p>
+            <p class="resume-summary">MS-MIS candidate at Texas A&amp;M with experience in SQL Server, SSIS, data warehousing, Salesforce data, validation, and applied AI. During my Summer 2026 internship I'm building a grounded warranty service agent on top of the data systems I helped ship. I enjoy turning ambiguous data problems into systems teams can trust.</p>
             <div class="resume-actions">
               <a class="button button-primary" href="Mitali-Sakle-Resume.txt" download>Download résumé snapshot <span aria-hidden="true">↓</span></a>
               <span>Replace this prototype file with your final PDF anytime.</span>
@@ -130,8 +172,8 @@
           </div>
           <div class="resume-facts">
             <div><span>EDUCATION</span><strong>MS in Management Information Systems</strong><small>Texas A&amp;M University · Expected 2027</small></div>
-            <div><span>FOCUS</span><strong>Data Engineering &amp; Analytics</strong><small>SQL · SSIS · Data Warehousing · AI</small></div>
-            <div><span>STRENGTH</span><strong>Reliable, explainable systems</strong><small>From technical grain to business impact</small></div>
+            <div><span>FOCUS</span><strong>Data Engineering &amp; Applied AI</strong><small>SQL · SSIS · Warehousing · Service agents</small></div>
+            <div><span>CURRENT</span><strong>Warranty service agent</strong><small>Summer Internship 2026 · in progress</small></div>
           </div>
         </div>
       </section>
@@ -153,5 +195,55 @@
         <a href="#top">Back to top ↑</a>
       </footer>
     </main>
+
+    <script>
+      (function () {
+        var header = document.getElementById("site-header");
+        var onScroll = function () {
+          if (window.scrollY > 24) header.classList.add("scrolled");
+          else header.classList.remove("scrolled");
+        };
+        window.addEventListener("scroll", onScroll, { passive: true });
+        onScroll();
+
+        var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        // Scroll reveal
+        var revealEls = document.querySelectorAll(".reveal");
+        if (reduceMotion || !("IntersectionObserver" in window)) {
+          revealEls.forEach(function (el) { el.classList.add("is-visible"); });
+        } else {
+          var revealObs = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+                revealObs.unobserve(entry.target);
+              }
+            });
+          }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
+          revealEls.forEach(function (el) { revealObs.observe(el); });
+        }
+
+        // Active nav highlighting
+        var navLinks = Array.prototype.slice.call(document.querySelectorAll("nav a"));
+        var sections = navLinks
+          .map(function (link) { return document.querySelector(link.getAttribute("href")); })
+          .filter(Boolean);
+        if ("IntersectionObserver" in window && sections.length) {
+          var navObs = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                navLinks.forEach(function (l) { l.classList.remove("active"); });
+                var match = navLinks.filter(function (l) {
+                  return l.getAttribute("href") === "#" + entry.target.id;
+                })[0];
+                if (match) match.classList.add("active");
+              }
+            });
+          }, { rootMargin: "-45% 0px -50% 0px" });
+          sections.forEach(function (s) { navObs.observe(s); });
+        }
+      })();
+    </script>
   </body>
 </html>

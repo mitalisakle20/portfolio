@@ -1,0 +1,26 @@
+MITALI SAKLE
+Data Engineering | SQL | SSIS | Data Warehousing | Applied AI
+
+PROFILE
+MS in Management Information Systems candidate at Texas A&M University with hands-on experience building SQL Server and SSIS data pipelines, dimensional models, validation frameworks, and production analytical facts. During my Summer 2026 internship I am building a grounded warranty service agent on top of these data systems. Interested in reliable data systems and grounded AI applications that create measurable business value.
+
+EDUCATION
+Texas A&M University
+Master of Science in Management Information Systems — Expected May 2027
+
+TECHNICAL FOCUS
+- SQL Server, T-SQL, SSMS, SSIS
+- ETL/ELT, staging, snapshots, resolved views, fact tables
+- Dimensional modeling, data profiling, deduplication, validation
+- Salesforce and SharePoint data integration
+- Agentic AI, MCP, retrieval-augmented generation, guardrails and escalation
+
+SELECTED PROJECT HIGHLIGHTS
+- Warranty service agent (in progress, Summer Internship 2026): an AI service agent that answers warranty questions—coverage, eligibility, and claim status—grounded in governed policy documents and SQL-backed warranty data, with guardrails that hand off to a person when a case can't be verified.
+- Engineered a version-aware market-data pipeline processing more than 19 million raw rows with repeatable MERGE loads and validation.
+- Delivered a production registration fact model with auditable legacy and migration-date logic.
+- Profiled and modeled a multi-source shipment dataset with more than 4.6 million rows.
+- Prototyped a grounded dealer-support AI agent using governed documentation and SQL-backed knowledge views.
+
+CUSTOMIZE THIS PROTOTYPE
+Replace this text snapshot with your final PDF résumé, then update the email, LinkedIn, and GitHub links in the portfolio source.

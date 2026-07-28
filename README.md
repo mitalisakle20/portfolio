@@ -1,20 +1,27 @@
-# Mitali Sakle — Data Engineering & Applied AI Portfolio
+# Mitali Sakle — Data Engineering Portfolio
 
-A responsive personal portfolio highlighting SQL, SSIS, data warehousing, presentations, and applied-AI work — including a warranty service agent built during a Summer 2026 internship.
+Personal portfolio for my Summer 2026 Data Engineering Internship at KIOTI Tractor: governed
+enterprise data pipelines across Salesforce, WMS, CAPA, and SharePoint; millions of operational
+records modeled into facts and dimensions; Power Automate cross-platform automation; and an
+in-progress, AI-ready warranty service agent.
 
-## Live site
+Live site: https://mitalisakle20.github.io/portfolio/
 
-https://mitalisakle20.github.io/portfolio/
+## Stack
+Plain HTML, CSS, and vanilla JS (no build step). Type: Space Grotesk (display), IBM Plex Sans
+(body), IBM Plex Mono (data labels). Case studies use native <details> for accessibility.
 
-## What's here
-
-- `index.html` — page structure and content (projects, presentations, résumé, contact).
-- `styles.css` — visual design. Type system: Space Grotesk (display), IBM Plex Sans (body), IBM Plex Mono (data labels).
+## Files
+- `index.html` — content and structure.
+- `styles.css` — design system and components (v5).
 - `hero-pipeline.webp` — hero illustration.
-- `Mitali-Sakle-Resume.txt` — résumé snapshot (replace with a final PDF anytime).
+- `Mitali-Sakle-Resume.txt` — résumé text (replace with a final PDF).
 
-## Customize
+## Before publishing
+- Set your real LinkedIn handle (search `YOUR-HANDLE` in `index.html`).
+- Replace the résumé with `Mitali-Sakle-Resume.pdf` and update its link (comment marks the spot).
+- All numeric claims match verified internship figures; keep "technically ERP-ready" wording.
 
-- Edit the **Warranty service agent** card in `index.html` as the project evolves (add a demo link, screenshots, or metrics once you can share them).
-- Update contact links (email / GitHub / LinkedIn) in the header, contact section, and footer.
-- Replace `Mitali-Sakle-Resume.txt` with a final résumé PDF and update its link in `index.html`.
+## Confidentiality
+Descriptions are sanitized (no server names, credentials, internal URLs, proprietary SQL,
+individual records, or employee names). Only verified counts, patterns, and decisions are shown.

@@ -77,20 +77,21 @@ h1 span { color: transparent; background: linear-gradient(100deg, var(--cream), 
 .flow { stroke: var(--orange); }
 .pkt { transform-box: fill-box; opacity: 0; } .pkt.in circle { fill: var(--green); } .pkt.out circle { fill: var(--orange); }
 
-/* Hero static default (no JS / no motion): everything visible, lines drawn */
+/* Hero static default (no JS / no motion): everything visible, lines drawn, tractor parked */
 .hero-copy { }
-.tractor { transform: translate(560px, 452px); opacity: .18; }
+.road { }
+.hero-scene .tractor { offset-path: path("M20 552 C120 520 130 476 250 476 S360 506 432 460"); offset-rotate: 0deg; offset-distance: 90%; opacity: 1; }
 .node.src, .node.dst, .warehouse { opacity: 1; }
-.flow { stroke-dasharray: 260; stroke-dashoffset: 0; }
+.flow { stroke-dasharray: 420; stroke-dashoffset: 0; }
 
 /* Hero animation only when JS present AND motion allowed */
 html.js .hero-copy { animation: rise .7s ease both; }
 @media (prefers-reduced-motion: no-preference) {
-  html.js .tractor { animation: drive 2.6s ease-in-out .2s both; }
+  html.js .hero-scene .tractor { animation: driveRoad 3.6s ease-in-out .3s both; }
   html.js .field .row { animation: rowfade 1s ease 1.6s both; }
   html.js .node.src { opacity: 0; animation: popG .5s ease both; }
   html.js .src-1 { animation-delay: 1.7s; } html.js .src-2 { animation-delay: 1.9s; } html.js .src-3 { animation-delay: 2.1s; } html.js .src-4 { animation-delay: 2.3s; }
-  html.js .flow { stroke-dashoffset: 260; animation: draw 1s ease forwards; }
+  html.js .flow { stroke-dashoffset: 420; animation: draw 1s ease forwards; }
   html.js .flows .f1 { animation-delay: 1.9s; } html.js .flows .f2 { animation-delay: 2.1s; } html.js .flows .f3 { animation-delay: 2.3s; } html.js .flows .f4 { animation-delay: 2.5s; }
   html.js .warehouse { opacity: 0; animation: popG .6s ease 2.6s both; }
   html.js .out-flows .flow { animation-delay: 3.6s; }
@@ -99,7 +100,7 @@ html.js .hero-copy { animation: rise .7s ease both; }
   html.js .pkt.in { animation: pkt 1s ease 2 forwards; }
   html.js .pkt.out { animation: pkt 1s ease 1 forwards; }
 }
-@keyframes drive { 0% { transform: translate(80px,452px); opacity: 0; } 12% { opacity: 1; } 88% { opacity: 1; } 100% { transform: translate(560px,452px); opacity: .18; } }
+@keyframes driveRoad { 0% { offset-distance: 0%; opacity: 0; } 8% { opacity: 1; } 100% { offset-distance: 90%; opacity: 1; } }
 @keyframes rowfade { to { opacity: .22; } }
 @keyframes draw { to { stroke-dashoffset: 0; } }
 @keyframes popG { 0% { opacity: 0; transform: translateY(6px); } 55% { opacity: 1; filter: drop-shadow(0 0 7px rgba(125,155,106,.85)); } 100% { opacity: 1; filter: none; transform: none; } }
@@ -158,32 +159,26 @@ html.js .more-grid .stagger:nth-child(4) { transition-delay: .24s; }
 .mini-node rect { fill: #262c20; stroke: var(--green); stroke-width: 1.4; }
 .mini-node.accent rect { stroke: var(--orange); }
 .mini-node text { fill: var(--cream); text-anchor: middle; font-family: var(--font-mono); font-size: 11px; }
-.flag path { fill: var(--orange); }
-.rec rect { fill: #2f261d; stroke: var(--orange); stroke-width: 1; opacity: .85; }
-.pa-dot, .aem-dot, .ship-dot { fill: var(--orange); transform-box: fill-box; opacity: 0; }
-.pa-batch rect { fill: rgba(217,138,74,.14); stroke: var(--orange); stroke-width: 1.2; }
+.flag { fill: none; stroke: var(--orange); stroke-width: 1.6; }
+.rec rect { fill: #2f261d; stroke: var(--orange); stroke-width: 1.1; opacity: .9; }
+.claim-dot, .pa-dot, .pa-dot2, .aem-dot, .ship-dot { fill: var(--orange); transform-box: fill-box; opacity: 0; }
+.pa-batch rect { fill: #241d15; stroke: var(--orange); stroke-width: 1.3; }
 .pa-batch text { fill: var(--orange-soft); text-anchor: middle; font-family: var(--font-mono); font-size: 10px; }
 .pa-batch { opacity: 1; transform-box: fill-box; transform-origin: center; }
 /* Mini animation only under html.js + motion, triggered when card visible */
 @media (prefers-reduced-motion: no-preference) {
   html.js .mini-line { stroke-dasharray: 340; stroke-dashoffset: 340; }
   html.js .feature-card.is-visible .mini-line { animation: draw 1.1s ease .2s forwards; }
-  html.js .feature-card.is-visible .rec { animation: merge 1s ease forwards; }
-  html.js .feature-card.is-visible .rec:nth-of-type(1) { animation-delay: .3s; }
-  html.js .feature-card.is-visible .rec:nth-of-type(2) { animation-delay: .45s; }
-  html.js .feature-card.is-visible .rec:nth-of-type(3) { animation-delay: .6s; }
-  html.js .feature-card .flag { opacity: 0; }
-  html.js .feature-card.is-visible .flag { animation: flagpop .5s ease 1.3s forwards; }
-  html.js .pa-batch { opacity: 0; }
-  html.js .feature-card.is-visible .pa-dot { animation: travel 1s ease forwards; }
-  html.js .feature-card.is-visible .pa-batch { animation: batchin .5s ease 1.15s forwards; }
+  /* additive packets — base diagram stays fully drawn */
+  html.js .feature-card.is-visible .claim-dot { animation: travel 1s ease forwards; }
+  html.js .feature-card.is-visible .pa-dot { animation: travel .9s ease forwards; }
+  html.js .feature-card.is-visible .pa-dot2 { animation: travel .8s ease forwards; }
+  html.js .feature-card.is-visible .pa-batch { animation: batchpulse .5s ease 1s 1; }
   html.js .feature-card.is-visible .aem-dot { animation: travel 1s ease forwards; }
   html.js .feature-card.is-visible .ship-dot { animation: travel 1.1s ease forwards; }
 }
 @keyframes travel { 0% { opacity: 0; transform: translate(0,0); } 15% { opacity: 1; } 100% { opacity: 0; transform: translate(var(--dx,0), var(--dy,0)); } }
-@keyframes merge { 0% { opacity: 0; transform: translate(0,0); } 25% { opacity: .85; } 100% { opacity: .12; transform: translate(var(--dx,0), var(--dy,0)); } }
-@keyframes flagpop { from { opacity: 0; transform: scale(.6); } to { opacity: 1; transform: none; } }
-@keyframes batchin { from { opacity: 0; transform: scale(.9); } to { opacity: 1; transform: none; } }
+@keyframes batchpulse { 0%,100% { filter: none; } 50% { filter: drop-shadow(0 0 6px rgba(217,138,74,.8)); } }
 
 .tag-list { margin: 0 0 20px; padding: 0; display: flex; flex-wrap: wrap; gap: 7px; list-style: none; }
 .tag-list li { padding: 6px 10px; border: 1px solid rgba(242,239,230,.14); border-radius: 999px; color: #d7dccb; background: rgba(242,239,230,.03); font-family: var(--font-mono); font-size: 11px; }
@@ -342,12 +337,11 @@ footer > a:last-child { font-family: var(--font-mono); font-size: 13px; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; }
   html.js .reveal { opacity: 1; transform: none; }
-  .tractor { opacity: .18; }
+  .hero-scene .tractor { opacity: 1; }
   .flow, .mini-line { stroke-dashoffset: 0 !important; }
   html.js .arch-stage { opacity: 1; transform: none; }
   .node.src, .node.dst, .warehouse { opacity: 1; }
-  .pkt, .pa-dot, .aem-dot, .ship-dot, .arch-packet, .conn-dot { display: none; }
-  .pa-batch, .flag { opacity: 1 !important; }
-  .rec { opacity: .85 !important; }
+  .pkt, .claim-dot, .pa-dot, .pa-dot2, .aem-dot, .ship-dot, .arch-packet, .conn-dot { display: none; }
+  .pa-batch { opacity: 1 !important; }
   .metric-underline { width: 46px; }
 }

@@ -16,11 +16,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
     <title>Mitali Sakle | Data Engineering — From the Field to the Data Warehouse</title>
-    <link rel="stylesheet" href="styles.css?v=6">
+    <link rel="stylesheet" href="styles.css?v=7">
+    <script>document.documentElement.className += " js";</script>
   </head>
   <body>
     <main>
       <a class="skip-link" href="#main-content">Skip to content</a>
+      <div class="scroll-progress" aria-hidden="true"><span id="scroll-bar"></span></div>
 
       <header class="site-header" id="site-header">
         <a class="brand" href="#top" aria-label="Mitali Sakle, home">
@@ -50,42 +52,28 @@
           </div>
 
           <div class="hero-visual">
-            <svg class="hero-scene" viewBox="0 0 820 560" role="img" aria-label="A compact tractor crosses field rows that become data flows from Salesforce, WMS, CAPA, and SharePoint into a data warehouse, then out to automation, analytics, and AI.">
+            <svg class="hero-scene" viewBox="0 0 820 560" role="img" aria-label="A compact tractor crosses field rows that become data flows. Data packets travel from Salesforce, WMS, CAPA, and SharePoint, converge into a data warehouse, then distribute to Automation, Analytics, Power Apps, and AI.">
               <defs>
-                <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0" stop-color="#232a20"/><stop offset="1" stop-color="#171a16"/>
-                </linearGradient>
-                <linearGradient id="warm" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0" stop-color="#e9a86b"/><stop offset="1" stop-color="#d98a4a"/>
-                </linearGradient>
+                <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#232a20"/><stop offset="1" stop-color="#171a16"/></linearGradient>
               </defs>
-
               <rect x="0" y="0" width="820" height="560" fill="url(#sky)"/>
-              <!-- Blue Ridge silhouettes -->
               <path class="ridge ridge-far" d="M0 210 Q150 150 320 195 T640 175 T820 205 V300 H0 Z"/>
               <path class="ridge ridge-near" d="M0 250 Q190 200 360 240 T700 225 T820 250 V320 H0 Z"/>
 
-              <!-- Field rows (perspective) that morph into data lines -->
               <g class="field" stroke-linecap="round">
-                <path class="row" d="M60 470 L360 300"/>
-                <path class="row" d="M210 500 L400 300"/>
-                <path class="row" d="M380 520 L440 300"/>
-                <path class="row" d="M560 500 L480 300"/>
+                <path class="row" d="M60 470 L360 300"/><path class="row" d="M210 500 L400 300"/>
+                <path class="row" d="M380 520 L440 300"/><path class="row" d="M560 500 L480 300"/>
                 <path class="row" d="M720 470 L520 300"/>
               </g>
 
-              <!-- Tractor -->
               <g class="tractor" aria-hidden="true">
-                <g transform="translate(0,0)">
-                  <rect x="14" y="-26" width="30" height="20" rx="3" fill="#3a4232"/>
-                  <rect x="34" y="-40" width="20" height="18" rx="3" fill="#4a5540"/>
-                  <rect x="52" y="-24" width="16" height="16" rx="2" fill="#d98a4a"/>
-                  <circle cx="24" cy="0" r="16" fill="#20241c" stroke="#7d9b6a" stroke-width="3"/>
-                  <circle cx="60" cy="4" r="9" fill="#20241c" stroke="#7d9b6a" stroke-width="2.5"/>
-                </g>
+                <rect x="14" y="-26" width="30" height="20" rx="3" fill="#3a4232"/>
+                <rect x="34" y="-40" width="20" height="18" rx="3" fill="#4a5540"/>
+                <rect x="52" y="-24" width="16" height="16" rx="2" fill="#d98a4a"/>
+                <circle cx="24" cy="0" r="16" fill="#20241c" stroke="#7d9b6a" stroke-width="3"/>
+                <circle cx="60" cy="4" r="9" fill="#20241c" stroke="#7d9b6a" stroke-width="2.5"/>
               </g>
 
-              <!-- Source nodes -->
               <g class="nodes" font-family="'IBM Plex Mono', monospace" font-size="13">
                 <g class="node src src-1"><rect x="40" y="70" width="150" height="40" rx="10"/><text x="115" y="95">Salesforce</text></g>
                 <g class="node src src-2"><rect x="40" y="132" width="150" height="40" rx="10"/><text x="115" y="157">WMS</text></g>
@@ -93,15 +81,13 @@
                 <g class="node src src-4"><rect x="40" y="256" width="150" height="40" rx="10"/><text x="115" y="281">SharePoint</text></g>
               </g>
 
-              <!-- Flow lines source -> warehouse -->
               <g class="flows" fill="none" stroke-width="2.5">
-                <path class="flow f1" d="M190 90 C300 90 300 175 380 175"/>
-                <path class="flow f2" d="M190 152 C300 152 320 178 380 178"/>
-                <path class="flow f3" d="M190 214 C300 214 320 182 380 182"/>
-                <path class="flow f4" d="M190 276 C300 276 300 185 380 185"/>
+                <path class="flow f1" d="M190 90 C300 90 320 175 380 178"/>
+                <path class="flow f2" d="M190 152 C300 152 330 178 380 180"/>
+                <path class="flow f3" d="M190 214 C300 214 330 182 380 182"/>
+                <path class="flow f4" d="M190 276 C300 276 320 186 380 184"/>
               </g>
 
-              <!-- Warehouse -->
               <g class="warehouse">
                 <path d="M382 150 L452 122 L522 150 Z" fill="#4f6b45"/>
                 <rect x="392" y="150" width="120" height="80" rx="4" fill="#2b3226" stroke="#7d9b6a" stroke-width="2"/>
@@ -110,18 +96,29 @@
                 <text x="452" y="252" text-anchor="middle" font-family="'IBM Plex Mono', monospace" font-size="12" fill="#a7ad9d">Data warehouse</text>
               </g>
 
-              <!-- Output flows -->
               <g class="out-flows" fill="none" stroke-width="2.5">
-                <path class="flow o1" d="M522 175 C600 175 600 110 660 110"/>
-                <path class="flow o2" d="M522 188 C600 188 600 188 660 188"/>
-                <path class="flow o3" d="M522 200 C600 200 600 266 660 266"/>
+                <path class="flow o1" d="M522 176 C600 176 600 110 660 110"/>
+                <path class="flow o2" d="M522 180 C600 180 600 170 660 170"/>
+                <path class="flow o3" d="M522 182 C600 182 600 230 660 230"/>
+                <path class="flow o4" d="M522 186 C600 186 600 290 660 290"/>
               </g>
 
-              <!-- Output nodes -->
               <g class="nodes out" font-family="'IBM Plex Mono', monospace" font-size="13">
-                <g class="node dst out-1"><rect x="660" y="90" width="140" height="40" rx="10"/><text x="730" y="115">Automation</text></g>
-                <g class="node dst out-2"><rect x="660" y="168" width="140" height="40" rx="10"/><text x="730" y="193">Analytics</text></g>
-                <g class="node dst out-3"><rect x="660" y="246" width="140" height="40" rx="10"/><text x="730" y="271">AI</text></g>
+                <g class="node dst out-1"><rect x="660" y="90" width="150" height="40" rx="10"/><text x="735" y="115">Automation</text></g>
+                <g class="node dst out-2"><rect x="660" y="150" width="150" height="40" rx="10"/><text x="735" y="175">Analytics</text></g>
+                <g class="node dst out-3"><rect x="660" y="210" width="150" height="40" rx="10"/><text x="735" y="235">Power Apps</text></g>
+                <g class="node dst out-4"><rect x="660" y="270" width="150" height="40" rx="10"/><text x="735" y="295">AI</text></g>
+              </g>
+
+              <g class="packets" aria-hidden="true">
+                <g class="pkt in" style="--dx:262px;--dy:88px;animation-delay:2.2s"><circle cx="190" cy="90" r="4"/></g>
+                <g class="pkt in" style="--dx:262px;--dy:26px;animation-delay:2.45s"><circle cx="190" cy="152" r="4"/></g>
+                <g class="pkt in" style="--dx:262px;--dy:-36px;animation-delay:2.7s"><circle cx="190" cy="214" r="4"/></g>
+                <g class="pkt in" style="--dx:262px;--dy:-98px;animation-delay:2.95s"><circle cx="190" cy="276" r="4"/></g>
+                <g class="pkt out" style="--dx:138px;--dy:-70px;animation-delay:3.9s"><circle cx="522" cy="180" r="4"/></g>
+                <g class="pkt out" style="--dx:138px;--dy:-10px;animation-delay:4.05s"><circle cx="522" cy="180" r="4"/></g>
+                <g class="pkt out" style="--dx:138px;--dy:50px;animation-delay:4.2s"><circle cx="522" cy="180" r="4"/></g>
+                <g class="pkt out" style="--dx:138px;--dy:110px;animation-delay:4.35s"><circle cx="522" cy="180" r="4"/></g>
               </g>
             </svg>
           </div>
@@ -133,15 +130,15 @@
       <section class="section impact-section" id="impact" aria-labelledby="impact-title">
         <div class="section-heading reveal">
           <div><p class="eyebrow">Internship impact</p><h2 id="impact-title">Measured in records, not adjectives.</h2></div>
-          <p>Six headline numbers from a single Summer 2026 internship. Every figure is a verified count from work I shipped or modeled.</p>
+          <p>Six headline numbers from a single Summer 2026 internship. Every figure is a verified count from work I built or modeled.</p>
         </div>
-        <div class="metric-grid reveal" id="metrics">
-          <div class="metric-card"><span class="metric-num" data-value="48026" data-sep="1">48,026</span><span class="metric-label">Salesforce claims governed</span></div>
-          <div class="metric-card"><span class="metric-num" data-value="19" data-suffix="M+">19M+</span><span class="metric-label">AEM source records processed</span></div>
-          <div class="metric-card"><span class="metric-num" data-value="4.64" data-decimals="2" data-suffix="M">4.64M</span><span class="metric-label">Shipment rows unified</span></div>
-          <div class="metric-card"><span class="metric-num" data-value="461" data-suffix="K">461K</span><span class="metric-label">Serialized order units modeled</span></div>
-          <div class="metric-card"><span class="metric-num" data-value="4">4</span><span class="metric-label">Power Automate workflows</span></div>
-          <div class="metric-card highlight"><span class="metric-num" data-static>~60m → ~2m</span><span class="metric-label">Automation runtime reduced</span></div>
+        <div class="metric-grid" id="metrics">
+          <div class="metric-card reveal"><span class="metric-num" data-value="48026" data-sep="1">48,026</span><span class="metric-underline"></span><span class="metric-label">Salesforce claims governed</span></div>
+          <div class="metric-card reveal"><span class="metric-num" data-value="19" data-suffix="M+">19M+</span><span class="metric-underline"></span><span class="metric-label">AEM source records processed</span></div>
+          <div class="metric-card reveal"><span class="metric-num" data-value="4.64" data-decimals="2" data-suffix="M">4.64M</span><span class="metric-underline"></span><span class="metric-label">Shipment rows unified</span></div>
+          <div class="metric-card reveal"><span class="metric-num" data-value="461" data-prefix="~" data-suffix="K">~461K</span><span class="metric-underline"></span><span class="metric-label">Serialized order units modeled</span></div>
+          <div class="metric-card reveal"><span class="metric-num" data-value="4">4</span><span class="metric-underline"></span><span class="metric-label">Power Automate workflows</span></div>
+          <div class="metric-card highlight reveal"><span class="metric-num" data-static>~60 min → ~2 min</span><span class="metric-underline"></span><span class="metric-label">Dealer AOR sync runtime</span></div>
         </div>
       </section>
 
@@ -154,112 +151,113 @@
 
         <div class="feature-grid">
 
-          <!-- 1 Claims -->
           <article class="feature-card reveal">
             <div class="fc-top"><span class="label-chip production">Production-oriented · Completed</span></div>
             <h3>Salesforce Claims &amp; eWarranty Automation Platform</h3>
             <p class="fc-impact">A governed claims warehouse with ERP-readiness controls and human-controlled release gates.</p>
-            <div class="metric-line"><b>48,026</b> claims · <b>0</b> duplicate IDs</div>
-            <svg class="mini" viewBox="0 0 320 74" role="img" aria-label="Salesforce claims flow into resolution rules, then one clean claim, then readiness queues.">
-              <line class="mini-line" x1="12" y1="37" x2="308" y2="37"/>
-              <g class="mini-node"><rect x="4" y="22" width="70" height="30" rx="7"/><text x="39" y="41">Claims</text></g>
-              <g class="mini-node"><rect x="86" y="22" width="82" height="30" rx="7"/><text x="127" y="41">Rules</text></g>
-              <g class="mini-node accent"><rect x="180" y="22" width="66" height="30" rx="7"/><text x="213" y="41">1 claim</text></g>
-              <g class="mini-node"><rect x="258" y="22" width="58" height="30" rx="7"/><text x="287" y="41">Queues</text></g>
+            <div class="metric-line"><b>48,026</b> claims · <b>0</b> duplicate IDs · <b>23,707</b> repair claims</div>
+            <svg class="mini mini-claims" viewBox="0 0 320 96" role="img" aria-label="Several messy source records converge into one governed claim; conflict flags are preserved; the claim feeds readiness and review queues.">
+              <text class="mini-cap" x="6" y="12">messy records</text>
+              <g class="rec" style="--dx:126px;--dy:20px"><rect x="6" y="20" width="42" height="13" rx="3"/></g>
+              <g class="rec" style="--dx:126px;--dy:0px"><rect x="6" y="41" width="42" height="13" rx="3"/></g>
+              <g class="rec" style="--dx:126px;--dy:-20px"><rect x="6" y="62" width="42" height="13" rx="3"/></g>
+              <line class="mini-line" x1="70" y1="47" x2="150" y2="47"/>
+              <g class="mini-node accent"><rect x="150" y="32" width="78" height="30" rx="7"/><text x="189" y="51">1 claim</text></g>
+              <g class="flag"><path d="M232 30 l11 4 l-11 4 z"/></g>
+              <text class="mini-cap" x="150" y="82">conflicts kept</text>
+              <line class="mini-line" x1="228" y1="47" x2="260" y2="47"/>
+              <g class="mini-node"><rect x="260" y="32" width="56" height="30" rx="7"/><text x="288" y="51">Queues</text></g>
             </svg>
             <ul class="tag-list" aria-label="Technologies"><li>SQL Server</li><li>Salesforce</li><li>SSIS</li><li>Idempotency</li><li>ERP Readiness</li></ul>
             <button class="disclosure-btn" aria-expanded="false" aria-controls="case-claims">Explore case study <span class="marker" aria-hidden="true"></span></button>
-            <div class="case-panel" id="case-claims" hidden>
-              <dl class="case-grid">
-                <div><dt>Business problem</dt><dd>The Salesforce claims source held ~200 fields with sparse, overlapping, and sometimes contradictory values—no reliable, decision-ready view of a claim existed.</dd></div>
-                <div><dt>Scale</dt><dd>48,026 claims ingested · 48,026 distinct IDs · 23,707 warranty-repair claims · 10,499 technically ERP-ready · 1,164 ERP review · 3,872 manual review.</dd></div>
-                <div><dt>Hardest decision</dt><dd>Where to draw the automation line. I kept the pipeline reliable and set every ERP-release and money-moving decision behind a human gate rather than auto-approving claims on incomplete rules.</dd></div>
-                <div><dt>Architecture</dt><dd>Raw → Snapshot → Resolved → Fact, one decision-ready row per claim, with explicit resolution precedence for dealer, asset, serial, dates, statuses, and amounts. Source-conflict flags preserved, not hidden.</dd></div>
-                <div><dt>Validation &amp; safeguards</dt><dd>Idempotent raw upsert, unique DB index for permanent duplicate protection, source hashes, current-row indicators, and readiness / manual-review / ERP-review / data-quality / timeliness queues.</dd></div>
-                <div><dt>Result</dt><dd>A reliable data-and-control foundation for future ERP integration and warranty-service automation—without prematurely automating financial approvals.</dd></div>
-              </dl>
-            </div>
+            <div class="case-wrap" id="case-claims"><div class="case-inner"><dl class="case-grid">
+              <div><dt>Business problem</dt><dd>The Salesforce claims source held ~200 fields with sparse, overlapping, and sometimes contradictory values—no reliable, decision-ready view of a claim existed.</dd></div>
+              <div><dt>Scale</dt><dd>48,026 claims ingested · 48,026 distinct claim IDs · 0 duplicate IDs after validation · 23,707 warranty-repair claims modeled · 10,499 technically ERP-ready.</dd></div>
+              <div><dt>Readiness, honestly stated</dt><dd>The 10,499 claims are <em>technically</em> ready only—not automatically approved, not confirmed financially approved. ERP sending is not active; a human release gate remains required.</dd></div>
+              <div><dt>Hardest decision</dt><dd>Where to draw the automation line. I kept the pipeline reliable and left every ERP-release and money-moving decision behind a human gate rather than auto-approving on incomplete rules.</dd></div>
+              <div><dt>Architecture</dt><dd>Raw → Snapshot → Resolved → Fact, one row per Salesforce claim ID, with explicit resolution precedence for dealer, asset, serial, dates, statuses, and amounts. Source-conflict flags preserved, not hidden.</dd></div>
+              <div><dt>Result</dt><dd>A reliable data-and-control foundation for future ERP integration and warranty-service automation—without prematurely automating financial approvals.</dd></div>
+            </dl></div></div>
           </article>
 
-          <!-- 2 Power Automate -->
           <article class="feature-card reveal">
             <div class="fc-top"><span class="label-chip completed">Completed</span></div>
             <h3>Power Automate Integration Suite</h3>
             <p class="fc-impact">Cross-platform SharePoint and SQL synchronization with duplicate-safe, source-ownership-aware workflows.</p>
-            <div class="metric-line"><b>4</b> workflows · <b>643</b> dealers · <b>~60m → ~2m</b></div>
-            <svg class="mini" viewBox="0 0 320 74" role="img" aria-label="SharePoint flows through JSON and REST into SQL Server.">
-              <line class="mini-line" x1="12" y1="37" x2="308" y2="37"/>
-              <g class="mini-node"><rect x="4" y="22" width="96" height="30" rx="7"/><text x="52" y="41">SharePoint</text></g>
-              <g class="mini-node accent"><rect x="118" y="22" width="84" height="30" rx="7"/><text x="160" y="41">JSON/REST</text></g>
-              <g class="mini-node"><rect x="220" y="22" width="96" height="30" rx="7"/><text x="268" y="41">SQL Server</text></g>
+            <div class="metric-line"><b>4</b> workflows · <b>643</b> dealers (master) · AOR sync <b>~60m → ~2m</b></div>
+            <svg class="mini mini-pa" viewBox="0 0 320 96" role="img" aria-label="SharePoint records first move row-by-row, then transform into one JSON batch, then into SQL Server.">
+              <g class="mini-node"><rect x="6" y="33" width="86" height="30" rx="7"/><text x="49" y="52">SharePoint</text></g>
+              <line class="mini-line" x1="92" y1="48" x2="214" y2="48"/>
+              <circle class="pa-dot" style="--dx:104px;animation-delay:.2s" cx="100" cy="48" r="4"/>
+              <circle class="pa-dot" style="--dx:104px;animation-delay:.5s" cx="100" cy="48" r="4"/>
+              <circle class="pa-dot" style="--dx:104px;animation-delay:.8s" cx="100" cy="48" r="4"/>
+              <g class="pa-batch"><rect x="120" y="38" width="72" height="20" rx="4"/><text x="156" y="52">JSON batch</text></g>
+              <g class="mini-node"><rect x="214" y="33" width="100" height="30" rx="7"/><text x="264" y="52">SQL Server</text></g>
             </svg>
             <ul class="tag-list" aria-label="Technologies"><li>Power Automate</li><li>SharePoint</li><li>SQL Server</li><li>OPENJSON</li><li>REST</li></ul>
             <button class="disclosure-btn" aria-expanded="false" aria-controls="case-pa">Explore case study <span class="marker" aria-hidden="true"></span></button>
-            <div class="case-panel" id="case-pa" hidden>
-              <dl class="case-grid">
-                <div><dt>Business problem</dt><dd>Dealer, territory, and prospect data lived in separate systems and drifted out of sync; a row-by-row sync took close to an hour.</dd></div>
-                <div><dt>Scale</dt><dd>4 production-oriented workflows; 643 dealer records synchronized; ~89 prospect records; runtime cut from ~60 minutes to ~2 minutes.</dd></div>
-                <div><dt>Hardest decision</dt><dd>Moving from row-by-row calls to a single JSON batch processed set-based with SQL OPENJSON, while preserving the rule that one dealer may hold multiple geographies.</dd></div>
-                <div><dt>Architecture</dt><dd>SharePoint → Power Automate → JSON payload → SQL, plus a SQL resolved view → SharePoint REST partial updates enriched with territory / FSM / TSM / RSM.</dd></div>
-                <div><dt>Validation &amp; safeguards</dt><dd>Row-count and required-value validation, exact-pair deduplication, insert/update/remove-stale logic, and protection so unrelated SharePoint-managed fields are never erased.</dd></div>
-                <div><dt>Result</dt><dd>Duplicate-safe cross-platform synchronization with run-level metrics and a ~30× faster dealer sync.</dd></div>
-              </dl>
-            </div>
+            <div class="case-wrap" id="case-pa"><div class="case-inner"><dl class="case-grid">
+              <div><dt>Business problem</dt><dd>Dealer, territory, and prospect data lived in separate systems and drifted out of sync, with slow row-by-row processing.</dd></div>
+              <div><dt>A · Dealer AOR JSON batch sync</dt><dd>SharePoint → Power Automate → JSON → SQL. Replaced row-by-row calls (close to 60 minutes) with one JSON batch (~2 minutes); the SQL JSON-processing step runs in ~1 second. Preserves the rule that one dealer may hold multiple geographies.</dd></div>
+              <div><dt>B · Dealer master → SharePoint</dt><dd>643 SQL dealer records synchronized with zero duplicate SQL account numbers, via normalized account-number matching and SharePoint REST partial updates that preserve unrelated SharePoint-owned fields. This flow currently takes ~15 minutes for 643 sequential records (a separate flow from the AOR sync above).</dd></div>
+              <div><dt>Status &amp; branch logic</dt><dd>Account status is based on Active/Inactive; inactive accounts may preserve termination reason and date; branch status represents the dealer-program classification.</dd></div>
+              <div><dt>Result</dt><dd>Four duplicate-safe, source-ownership-aware workflows keeping dealer and territory data consistent across SharePoint and SQL.</dd></div>
+            </dl></div></div>
           </article>
 
-          <!-- 3 AEM -->
           <article class="feature-card reveal">
             <div class="fc-top"><span class="label-chip completed">Completed</span></div>
             <h3>AEM Enterprise Market Data Pipeline</h3>
             <p class="fc-impact">Fragmented market-data ingestion consolidated into one canonical source and a governed recent/history warehouse.</p>
-            <div class="metric-line"><b>19M+</b> raw · <b>17.2M</b> resolved facts · <b>0</b> dup keys</div>
-            <svg class="mini" viewBox="0 0 320 74" role="img" aria-label="A canonical raw stream splits into recent and historical fact tables.">
-              <path class="mini-line" d="M60 37 H150 M150 37 C180 37 190 20 226 20 M150 37 C180 37 190 54 226 54" fill="none"/>
-              <g class="mini-node"><rect x="4" y="22" width="66" height="30" rx="7"/><text x="37" y="41">Raw</text></g>
-              <g class="mini-node accent"><rect x="226" y="5" width="90" height="30" rx="7"/><text x="271" y="24">Recent</text></g>
-              <g class="mini-node"><rect x="226" y="39" width="90" height="30" rx="7"/><text x="271" y="58">Historical</text></g>
+            <div class="metric-line"><b>19,023,845</b> raw · <b>17,189,752</b> resolved · <b>0</b> dup keys</div>
+            <svg class="mini mini-aem" viewBox="0 0 320 96" role="img" aria-label="One canonical raw stream splits into recent and historical fact branches.">
+              <g class="mini-node"><rect x="6" y="33" width="70" height="30" rx="7"/><text x="41" y="52">Raw</text></g>
+              <path class="mini-line" d="M76 48 H150 M150 48 C182 48 192 24 220 24 M150 48 C182 48 192 72 220 72"/>
+              <circle class="aem-dot m" style="--dx:70px;--dy:0px;animation-delay:.1s" cx="80" cy="48" r="4"/>
+              <circle class="aem-dot r" style="--dx:70px;--dy:-24px;animation-delay:.9s" cx="150" cy="48" r="4"/>
+              <circle class="aem-dot h" style="--dx:70px;--dy:24px;animation-delay:.9s" cx="150" cy="48" r="4"/>
+              <g class="mini-node accent"><rect x="220" y="9" width="94" height="30" rx="7"/><text x="267" y="28">Recent</text></g>
+              <g class="mini-node"><rect x="220" y="57" width="94" height="30" rx="7"/><text x="267" y="76">Historical</text></g>
             </svg>
             <ul class="tag-list" aria-label="Technologies"><li>SQL Server</li><li>SSIS</li><li>Partitioning</li><li>MERGE</li><li>Reconciliation</li></ul>
             <button class="disclosure-btn" aria-expanded="false" aria-controls="case-aem">Explore case study <span class="marker" aria-hidden="true"></span></button>
-            <div class="case-panel" id="case-aem" hidden>
-              <dl class="case-grid">
-                <div><dt>Business problem</dt><dd>Market data arrived through fragmented ingestion into competing raw tables, making a single trusted source impossible.</dd></div>
-                <div><dt>Scale</dt><dd>19,023,845 clean raw records · 5,043,094 recent + 12,146,658 historical resolved · ~17.2M resolved fact records.</dd></div>
-                <div><dt>Hardest decision</dt><dd>Moving record classification into governed SQL, using reporting date as the business partition and latest source-post date to resolve duplicate business keys.</dd></div>
-                <div><dt>Architecture</dt><dd>One canonical raw layer → separate recent and historical fact tables with natural-key uniqueness, partition constraints, and targeted indexing.</dd></div>
-                <div><dt>Validation &amp; safeguards</dt><dd>Reconciled source, partition, and fact counts end-to-end; redesigned SSIS so classification happened in SQL rather than parallel raw tables.</dd></div>
-                <div><dt>Result</dt><dd>A single trusted source with a governed recent/history model and zero duplicate business keys.</dd></div>
-              </dl>
-            </div>
+            <div class="case-wrap" id="case-aem"><div class="case-inner"><dl class="case-grid">
+              <div><dt>Business problem</dt><dd>Market data arrived through fragmented ingestion into competing raw tables, making a single trusted source impossible.</dd></div>
+              <div><dt>Scale</dt><dd>19,023,845 clean raw records · 5,043,094 recent + 12,146,658 historical = 17,189,752 total resolved records · 0 duplicate natural keys after resolution.</dd></div>
+              <div><dt>Hardest decision</dt><dd>Classifying records in governed SQL: recent vs. history is based on reporting date (recent range ends 2026-05-31), and the latest source-post date resolves duplicate natural keys.</dd></div>
+              <div><dt>Architecture</dt><dd>One canonical raw layer → separate recent and historical fact tables with natural-key uniqueness, partition constraints, and targeted indexing.</dd></div>
+              <div><dt>Validation</dt><dd>Reconciled source, partition, and fact counts end-to-end; redesigned SSIS so classification happened in SQL rather than parallel raw tables.</dd></div>
+              <div><dt>Result</dt><dd>A single trusted source with a governed recent/history model and zero duplicate business keys.</dd></div>
+            </dl></div></div>
           </article>
 
-          <!-- 4 Shipments -->
           <article class="feature-card reveal">
             <div class="fc-top"><span class="label-chip completed">Completed</span></div>
             <h3>Multi-Source Shipment Warehouse</h3>
             <p class="fc-impact">US and Canadian shipment history unified without grain-related duplication, preserving full traceability.</p>
-            <div class="metric-line"><b>4.64M</b> shipment-detail rows · US &amp; Canada</div>
-            <svg class="mini" viewBox="0 0 320 74" role="img" aria-label="US WMS and Canada CAPA merge into a unified shipment warehouse.">
-              <path class="mini-line" d="M104 20 C150 20 150 37 190 37 M104 54 C150 54 150 37 190 37" fill="none"/>
-              <g class="mini-node"><rect x="4" y="5" width="100" height="30" rx="7"/><text x="54" y="24">US · WMS</text></g>
-              <g class="mini-node"><rect x="4" y="39" width="100" height="30" rx="7"/><text x="54" y="58">CA · CAPA</text></g>
-              <g class="mini-node accent"><rect x="190" y="22" width="126" height="30" rx="7"/><text x="253" y="41">Unified WH</text></g>
+            <div class="metric-line"><b>4,643,154</b> rows · US <b>4,196,616</b> · CA <b>446,538</b></div>
+            <svg class="mini mini-ship" viewBox="0 0 320 96" role="img" aria-label="US WMS and Canada CAPA streams join into a unified shipment warehouse, keeping country and source labels visible.">
+              <g class="mini-node"><rect x="6" y="9" width="96" height="30" rx="7"/><text x="54" y="28">US · WMS</text></g>
+              <g class="mini-node"><rect x="6" y="57" width="96" height="30" rx="7"/><text x="54" y="76">CA · CAPA</text></g>
+              <path class="mini-line" d="M102 24 C140 24 150 48 190 48 M102 72 C140 72 150 48 190 48"/>
+              <circle class="ship-dot" style="--dx:84px;--dy:24px;animation-delay:.1s" cx="106" cy="24" r="4"/>
+              <circle class="ship-dot" style="--dx:84px;--dy:-24px;animation-delay:.1s" cx="106" cy="72" r="4"/>
+              <g class="mini-node accent"><rect x="190" y="33" width="124" height="30" rx="7"/><text x="252" y="52">Unified WH</text></g>
             </svg>
             <ul class="tag-list" aria-label="Technologies"><li>SQL Server</li><li>WMS</li><li>CAPA</li><li>SSIS</li><li>Grain Resolution</li></ul>
             <button class="disclosure-btn" aria-expanded="false" aria-controls="case-ship">Explore case study <span class="marker" aria-hidden="true"></span></button>
-            <div class="case-panel" id="case-ship" hidden>
-              <dl class="case-grid">
-                <div><dt>Business problem</dt><dd>Shipment truth was split across WMS header/detail/delivery sources and Canadian CAPA history at different grains.</dd></div>
-                <div><dt>Scale</dt><dd>4,643,154 shipment-detail records across the United States and Canada.</dd></div>
-                <div><dt>Hardest decision</dt><dd>Resolving grain differences across shipments, invoices, orders, and serialized units without letting joins inflate quantities or financial totals.</dd></div>
-                <div><dt>Architecture</dt><dd>Snapshot and resolved warehouse structures preserving shipment, invoice, order, serial/lot, country, and source-system traceability.</dd></div>
-                <div><dt>Validation &amp; safeguards</dt><dd>Row counts, distinct business identifiers, and source-country totals reconciled against sources.</dd></div>
-                <div><dt>Result</dt><dd>Two countries of shipment history unified with duplication-safe grain and full traceability.</dd></div>
-              </dl>
-            </div>
+            <div class="case-wrap" id="case-ship"><div class="case-inner"><dl class="case-grid">
+              <div><dt>Business problem</dt><dd>Shipment truth was split across WMS header/detail/delivery sources and Canadian CAPA history at different grains.</dd></div>
+              <div><dt>Scale</dt><dd>4,643,154 shipment-detail rows total — 4,196,616 US and 446,538 Canadian.</dd></div>
+              <div><dt>Hardest decision</dt><dd>Resolving grain differences across shipments, invoices, orders, and serialized units without letting joins inflate quantities or financial totals.</dd></div>
+              <div><dt>Architecture</dt><dd>Snapshot and resolved warehouse structures preserving shipment, invoice, order, serial/lot, country, and source-system traceability.</dd></div>
+              <div><dt>Validation</dt><dd>Row counts, distinct business identifiers, and source-country totals reconciled against sources.</dd></div>
+              <div><dt>Result</dt><dd>Two countries of shipment history unified with duplication-safe grain and full traceability.</dd></div>
+            </dl></div></div>
           </article>
 
         </div>
+        <div class="section-connector" aria-hidden="true"><svg viewBox="0 0 20 120" preserveAspectRatio="none"><line class="conn-line" x1="10" y1="0" x2="10" y2="120"/><circle class="conn-dot" cx="10" cy="0" r="4"/></svg></div>
       </section>
 
       <!-- ===================== ARCHITECTURE ===================== -->
@@ -274,13 +272,14 @@
           </div>
           <div class="arch-rail" aria-hidden="true"><span class="arch-packet"></span></div>
           <ol class="arch-flow">
-            <li class="arch-stage"><span class="stage-name">Raw imports</span><small>idempotent ingestion</small></li>
-            <li class="arch-stage"><span class="stage-name">Snapshots</span><small>point-in-time history</small></li>
-            <li class="arch-stage"><span class="stage-name">Resolved views</span><small>business-rule resolution</small><span class="shield" title="validated" aria-label="validation">✓</span></li>
-            <li class="arch-stage accent"><span class="stage-name">Facts · dimensions · control tables</span><small>decision-ready</small><span class="shield" title="validated" aria-label="validation">✓</span></li>
+            <li class="arch-stage"><span class="stage-name">Raw imports</span><small>idempotent ingestion</small><span class="audit" aria-label="source hash">#hash</span></li>
+            <li class="arch-stage"><span class="stage-name">Snapshots</span><small>point-in-time history</small><span class="shield" aria-label="validated">✓</span></li>
+            <li class="arch-stage"><span class="stage-name">Resolved views</span><small>business-rule resolution</small><span class="audit" aria-label="source hash">#hash</span><span class="shield" aria-label="validated">✓</span></li>
+            <li class="dup-collapse" aria-label="duplicate records collapse before the fact layer"><span class="dupd a"></span><span class="dupd b"></span><span class="dup-one"></span><small>duplicates collapsed</small></li>
+            <li class="arch-stage accent"><span class="stage-name">Facts · dimensions · control tables</span><small>decision-ready</small><span class="shield" aria-label="validated">✓</span></li>
           </ol>
           <div class="arch-row consumers" aria-label="Consumers">
-            <span class="arch-chip">Power BI</span><span class="arch-chip">Power Apps</span><span class="arch-chip">Power Automate</span><span class="arch-chip">AI agents</span>
+            <span class="arch-chip">Analytics</span><span class="arch-chip">Automation</span><span class="arch-chip">AI</span>
           </div>
         </div>
         <div class="ownership-chips reveal" aria-label="What I owned across the stack">
@@ -295,29 +294,29 @@
           <div><p class="eyebrow">More systems shipped</p><h2 id="more-title">The rest of the internship.</h2></div>
           <p>Smaller builds and an in-progress prototype. Same standards, less real estate.</p>
         </div>
-        <div class="more-grid reveal">
-          <article class="more-card">
+        <div class="more-grid">
+          <article class="more-card reveal stagger">
             <span class="label-chip production">Production</span>
             <h3>Production Salesforce Registration Fact</h3>
-            <p>Auditable registration fact at one row per registration line, asset, and serial—preferring verified legacy dates over migration dates, with explicit date provenance and dealer-resolution rules.</p>
+            <p>An auditable registration fact at one row per registration line item, asset, or serial—preferring the legacy registration date when available, explicitly identifying Salesforce migration dates, taking the registered dealer from the registration header, and retaining asset branch for audit context.</p>
             <ul class="tag-list"><li>Salesforce</li><li>Modeling</li><li>Date Provenance</li></ul>
           </article>
-          <article class="more-card">
+          <article class="more-card reveal stagger">
             <span class="label-chip completed">Completed</span>
             <h3>Salesforce Order-to-Unit Warehouse</h3>
-            <p>A three-level Salesforce hierarchy (Order → Order Item → Order Item Unit) modeled into ~461K validated serialized order units, preserving dealer, product, serial, price, and status context.</p>
+            <p>A three-level Salesforce hierarchy (Order → Order Item → Order Item Unit) modeled at one row per Order Item Unit—approximately 461,000 serialized order-unit records—preserving dealer, product, serial, price, and status context.</p>
             <ul class="tag-list"><li>Salesforce</li><li>Hierarchy</li><li>Validation</li></ul>
           </article>
-          <article class="more-card">
+          <article class="more-card reveal stagger">
             <span class="label-chip completed">Completed</span>
             <h3>UCC Operational Data Pipeline</h3>
-            <p>Controlled ingestion and reporting for ~5.28M current UCC FactIDs with geography and equipment-size context, plus reference/bridge tables and operational validation scripts.</p>
+            <p>Controlled ingestion and reporting for approximately 5.28 million current UCC FactIDs, with geography and equipment-size context added, plus duplicate and row-count validation.</p>
             <ul class="tag-list"><li>SQL Server</li><li>SSIS</li><li>Validation</li></ul>
           </article>
-          <article class="more-card">
+          <article class="more-card reveal stagger">
             <span class="label-chip progress"><span class="live-dot" aria-hidden="true"></span>In progress</span>
             <h3>Warranty Service Agent</h3>
-            <p>An AI-assisted dealer-support and warranty-service prototype grounded in the governed claims, dealer, and registration data above—with guardrails and human handoff. Not deployed; does not approve claims or move money.</p>
+            <p>An AI-assisted dealer-support and warranty-service prototype grounded in the governed claims, dealer, and registration data above—with guardrails and human handoff. Not deployed; it does not approve claims or move money.</p>
             <ul class="tag-list"><li>Agentic AI</li><li>RAG</li><li>Guardrails</li></ul>
           </article>
         </div>
@@ -372,7 +371,7 @@
           <div>
             <p class="eyebrow">Résumé</p>
             <h2 id="resume-title">Data engineer with a builder's mindset.</h2>
-            <p class="resume-summary">MS-MIS candidate at Texas A&amp;M. During my Summer 2026 Data Engineering Internship at KIOTI Tractor I built governed pipelines across Salesforce, WMS, CAPA, and SharePoint; modeled millions of operational records into facts and dimensions; automated cross-platform synchronization; and designed data-quality and ERP-readiness controls that set the foundation for safe AI-assisted dealer and warranty support.</p>
+            <p class="resume-summary">MS-MIS candidate at Texas A&amp;M. During my Summer 2026 Data Engineering Internship at KIOTI Tractor I built governed pipelines across Salesforce, WMS, CAPA, and SharePoint; modeled millions of operational records into facts and dimensions; developed cross-platform automation; and designed data-quality and ERP-readiness controls that set the foundation for safe AI-assisted dealer and warranty support.</p>
             <div class="resume-actions">
               <!-- Swap this to your final PDF: add Mitali-Sakle-Resume.pdf to the repo and update href. -->
               <a class="button button-primary" href="Mitali-Sakle-Resume.txt" download>Download résumé <span aria-hidden="true">↓</span></a>
@@ -417,11 +416,18 @@
       (function () {
         var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
         var header = document.getElementById("site-header");
-        var onScroll = function () { header.classList.toggle("scrolled", window.scrollY > 24); };
+        var bar = document.getElementById("scroll-bar");
+        function onScroll() {
+          header.classList.toggle("scrolled", window.scrollY > 24);
+          if (bar) {
+            var h = document.documentElement;
+            var max = h.scrollHeight - h.clientHeight;
+            bar.style.width = (max > 0 ? (window.scrollY / max) * 100 : 0) + "%";
+          }
+        }
         window.addEventListener("scroll", onScroll, { passive: true });
         onScroll();
 
-        // Reveal on scroll
         var revealEls = document.querySelectorAll(".reveal");
         if (reduce || !("IntersectionObserver" in window)) {
           revealEls.forEach(function (el) { el.classList.add("is-visible"); });
@@ -432,7 +438,6 @@
           revealEls.forEach(function (el) { ro.observe(el); });
         }
 
-        // Active nav
         var links = Array.prototype.slice.call(document.querySelectorAll("nav a"));
         var secs = links.map(function (l) { return document.querySelector(l.getAttribute("href")); }).filter(Boolean);
         if ("IntersectionObserver" in window && secs.length) {
@@ -448,45 +453,41 @@
           secs.forEach(function (s) { no.observe(s); });
         }
 
-        // Count-up metrics (once)
-        function fmt(n, dec, sep, suf) {
+        function fmt(n, dec, sep, pre, suf) {
           var s = dec ? n.toFixed(dec) : Math.round(n).toString();
           if (sep) { var p = s.split("."); p[0] = p[0].replace(/\B(?=(\d{3})+(?!\d))/g, ","); s = p.join("."); }
-          return s + (suf || "");
+          return (pre || "") + s + (suf || "");
         }
+        function markDone(el) { var c = el.closest(".metric-card"); if (c) c.classList.add("counted"); }
         function countUp(el) {
-          if (el.hasAttribute("data-static")) return;
+          if (el.hasAttribute("data-static")) { markDone(el); return; }
           var target = parseFloat(el.getAttribute("data-value"));
           var dec = parseInt(el.getAttribute("data-decimals") || "0", 10);
           var sep = el.getAttribute("data-sep") === "1";
+          var pre = el.getAttribute("data-prefix") || "";
           var suf = el.getAttribute("data-suffix") || "";
           var dur = 1100, start = null;
-          el.textContent = fmt(0, dec, sep, suf);
+          el.textContent = fmt(0, dec, sep, pre, suf);
           function step(t) {
             if (!start) start = t;
             var p = Math.min((t - start) / dur, 1);
             var e = 1 - Math.pow(1 - p, 3);
-            el.textContent = fmt(target * e, dec, sep, suf);
-            if (p < 1) requestAnimationFrame(step); else el.textContent = fmt(target, dec, sep, suf);
+            el.textContent = fmt(target * e, dec, sep, pre, suf);
+            if (p < 1) requestAnimationFrame(step);
+            else { el.textContent = fmt(target, dec, sep, pre, suf); markDone(el); }
           }
           requestAnimationFrame(step);
         }
         var grid = document.getElementById("metrics");
         if (grid && !reduce && "IntersectionObserver" in window) {
           var mo = new IntersectionObserver(function (es) {
-            es.forEach(function (e) {
-              if (e.isIntersecting) {
-                grid.querySelectorAll(".metric-num").forEach(countUp);
-                mo.disconnect();
-              }
-            });
+            es.forEach(function (e) { if (e.isIntersecting) { grid.querySelectorAll(".metric-num").forEach(countUp); mo.disconnect(); } });
           }, { threshold: 0.4 });
           mo.observe(grid);
         }
 
-        // Architecture scroll activation + one-time packet
         var arch = document.getElementById("arch");
-        var stages = document.querySelectorAll(".arch-stage");
+        var stages = document.querySelectorAll(".arch-stage, .dup-collapse");
         if (reduce || !("IntersectionObserver" in window)) {
           stages.forEach(function (s) { s.classList.add("active"); });
         } else {
@@ -502,24 +503,24 @@
           }
         }
 
-        // Accessible disclosures
+        var conn = document.querySelector(".section-connector");
+        if (conn && !reduce && "IntersectionObserver" in window) {
+          var cObs = new IntersectionObserver(function (es) {
+            es.forEach(function (e) { if (e.isIntersecting) { conn.classList.add("in"); cObs.disconnect(); } });
+          }, { threshold: 0.4 });
+          cObs.observe(conn);
+        }
+
         document.querySelectorAll(".disclosure-btn").forEach(function (btn) {
-          var panel = document.getElementById(btn.getAttribute("aria-controls"));
+          var w = document.getElementById(btn.getAttribute("aria-controls"));
+          btn.setAttribute("aria-expanded", "false");
+          if (w) { w.classList.remove("open"); w.setAttribute("aria-hidden", "true"); }
           btn.addEventListener("click", function () {
             var open = btn.getAttribute("aria-expanded") === "true";
             btn.setAttribute("aria-expanded", String(!open));
-            if (!panel) return;
-            if (open) {
-              panel.classList.remove("open");
-              if (reduce) { panel.hidden = true; }
-              else {
-                var done = function () { panel.hidden = true; panel.removeEventListener("transitionend", done); };
-                panel.addEventListener("transitionend", done);
-              }
-            } else {
-              panel.hidden = false;
-              requestAnimationFrame(function () { panel.classList.add("open"); });
-            }
+            if (!w) return;
+            w.classList.toggle("open", !open);
+            w.setAttribute("aria-hidden", String(open));
           });
         });
       })();
